@@ -2,9 +2,10 @@ import { Server } from "socket.io";
 import socketHandler from './index.js';
 
 const PORT = 3005;
+const DOMAIN = process.env.DOMAIN_CHAT_APP;
 const io = new Server({
     cors: {
-        origin: "*",  
+        origin: DOMAIN,  
         methods: ["GET", "POST"]
     }
 });
