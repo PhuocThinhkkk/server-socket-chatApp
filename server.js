@@ -1,8 +1,14 @@
 import { Server } from "socket.io";
 import socketHandler from './index.js';
+import dotenv from 'dotenv'
+
+// Load environment variables
+dotenv.config();
 
 const PORT = 3005;
 const DOMAIN = process.env.DOMAIN_CHAT_APP;
+console.log("DOMAIN:", DOMAIN);  
+
 const io = new Server({
     cors: {
         origin: DOMAIN,  
